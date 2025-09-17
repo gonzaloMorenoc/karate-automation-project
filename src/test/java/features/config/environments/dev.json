@@ -1,0 +1,10 @@
+{
+    "baseUrl": "https://jsonplaceholder.typicode.com",
+    "timeout": 10000,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "credentials": {
+      "apiKey": "dev-api-key-placeholder"
+    }
+  }
