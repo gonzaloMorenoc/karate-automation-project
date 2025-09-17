@@ -1,10 +1,26 @@
 {
-    "baseUrl": "https://jsonplaceholder.typicode.com",
-    "timeout": 30000,
-    "headers": {
-      "Content-Type": "application/json; charset=utf-8"
-    },
-    "credentials": {
-      "apiKey": "pro-api-key-placeholder"
-    }
+  "baseUrl": "https://jsonplaceholder.typicode.com",
+  "timeout": 30000,
+  "ssl": true,
+  "debug": false,
+  "headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Accept": "application/json",
+      "User-Agent": "Karate-Tests-Pro/1.0"
+  },
+  "credentials": {
+      "apiKey": "pro-api-key-placeholder",
+      "username": "pro-user",
+      "password": "pro-password"
+  },
+  "limits": {
+      "maxRetries": 2,
+      "retryInterval": 5000,
+      "maxResponseTime": 15000
+  },
+  "features": {
+      "enableLogging": false,
+      "enableMetrics": true,
+      "enableRetry": false
   }
+}
