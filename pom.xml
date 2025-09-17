@@ -38,6 +38,13 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
         
         <dependency>
             <groupId>ch.qos.logback</groupId>
@@ -74,13 +81,9 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven.surefire.version}</version>
                 <configuration>
-                    <argLine>-Dfile.encoding=UTF-8</argLine>
                     <systemProperties>
                         <karate.env>${karate.env}</karate.env>
                     </systemProperties>
-                    <includes>
-                        <include>**/runners/*Runner.java</include>
-                    </includes>
                 </configuration>
             </plugin>
             
@@ -158,9 +161,9 @@
                         <artifactId>maven-surefire-plugin</artifactId>
                         <version>${maven.surefire.version}</version>
                         <configuration>
-                            <includes>
-                                <include>**/RegressionTestsRunner.java</include>
-                            </includes>
+                            <systemProperties>
+                                <karate.env>${karate.env}</karate.env>
+                            </systemProperties>
                         </configuration>
                     </plugin>
                 </plugins>
