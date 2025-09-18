@@ -36,7 +36,7 @@ src/test/java/
 │   └── RegressionTestsRunner.java  
 ├── features/
 │   ├── config/
-│   │   ├── environments/           # Configuración por ambiente
+│   │   ├── environments/           # Configuración por entorno
 │   │   │   ├── dev.json           
 │   │   │   ├── int.json           
 │   │   │   └── pro.json           
@@ -69,7 +69,7 @@ mvn test -Psmoke
 mvn test -Pregression
 ```
 
-### Por ambiente
+### Por entorno
 ```bash
 mvn test -Pint -Dtest=SmokeTestsRunner
 mvn test -Ppro -Dtest=SmokeTestsRunner
@@ -92,9 +92,9 @@ mvn test -Dtest=RegressionTestsRunner#testUsersOnly
 mvn test -Dtest=RegressionTestsRunner#testPostsOnly
 ```
 
-## Gestión de Ambientes
+## Gestión de entornos
 
-Cada ambiente tiene su archivo de configuración JSON:
+Cada entorno tiene su archivo de configuración JSON:
 
 - **dev.json**: Desarrollo con debug habilitado (timeout: 10s)
 - **int.json**: Integración con timeouts moderados (timeout: 15s)  
@@ -135,7 +135,7 @@ java -version && mvn -version
 mvn clean compile test-compile
 ```
 
-**Configuración de ambiente no carga**
+**Configuración de entorno no carga**
 ```bash
 # Verificar archivo de configuración
 ls src/test/java/features/config/environments/
@@ -146,7 +146,7 @@ mvn test -Dkarate.env=dev -X -Dtest=SmokeTestsRunner
 
 **Problemas de conexión**
 ```bash
-# Cambiar ambiente
+# Cambiar entorno
 mvn test -Pint -Dtest=SmokeTestsRunner
 
 # Aumentar timeout
